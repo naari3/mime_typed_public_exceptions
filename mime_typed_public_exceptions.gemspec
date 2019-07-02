@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
     '{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md'
   ]
 
-  s.add_dependency 'rails', '~> 5.1.6', '>= 5.1.6.1'
+  s.add_dependency 'rails', '>= 5'
 
   s.add_development_dependency 'pry'
   s.add_development_dependency 'rspec-rails'
