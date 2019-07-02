@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'action_dispatch'
+require 'mime_typed_public_exceptions/version'
+
 # This class behaves roughly as ActionDispatch::PublicExceptions.
 # PublicExceptions is a Rack::Middleware for render an error page
 # which static from /public directory but html only.
