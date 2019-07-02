@@ -1,0 +1,4 @@
+--require spec_helper
+--color
+--pattern spec/**/*_spec.rb
+--exclude-pattern spec/dummy_app/**/*_spec.rb
