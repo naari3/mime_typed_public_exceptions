@@ -1,8 +1,27 @@
 # MimeTypedPublicExceptions
-Short description and motivation.
+PublicExceptions for multiple mime types
 
 ## Usage
-How to use my plugin.
+```js
+// public/500.json
+{
+  "status": 500,
+  "message": "internal server error"
+}
+```
+
+```ruby
+Rails.application.configure do
+  config.exceptions_app = MimeTypedPublicExceptions.new(Rails.public_path)
+end
+```
+
+```ruby
+app.get '/some_exception', headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+# => 500
+app.response_body
+# => "{\n  \"status\": 500,\n  \"message\": \"internal server error\"\n}"
+```
 
 ## Installation
 Add this line to your application's Gemfile:
