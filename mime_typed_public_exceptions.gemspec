@@ -2,13 +2,10 @@
 
 $LOAD_PATH.push File.expand_path('lib', __dir__)
 
-# Maintain your gem's version:
-require 'mime_typed_public_exceptions/version'
-
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = 'mime_typed_public_exceptions'
-  s.version     = MimeTypedPublicExceptions::VERSION
+  s.version     = '0.1.0'
   s.authors     = ['naari3']
   s.email       = ['naari.named@gmail.com']
   s.homepage    = 'https://github.com/naari3/mime_typed_public_exceptions'
