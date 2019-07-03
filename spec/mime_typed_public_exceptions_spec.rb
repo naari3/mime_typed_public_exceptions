@@ -34,7 +34,7 @@ Rails.application.configure do
   end
 end
 
-describe ShowExceptionsController, type: :request do
+describe MimeTypedPublicExceptions, type: :request do
   [
     { content_type: 'text/html', fixture_extension: 'html' },
     { content_type: 'application/json', fixture_extension: 'json' },
@@ -51,6 +51,17 @@ describe ShowExceptionsController, type: :request do
           "public/#{status}.#{content[:fixture_extension]}"
         )
       end
+    end
+  end
+
+  context 'with not prepared type request' do
+    it 'return internal error body' do
+      get '/ex_500', headers: {
+        'Content-Type' => 'text/plain',
+        'Accept' => 'text/plain'
+      }
+
+      expect(response.body).to eq read_fixture('public/500.html')
     end
   end
 end

@@ -12,7 +12,7 @@ class MimeTypedPublicExceptions < ActionDispatch::PublicExceptions
   private
 
   def render(status, content_type, _body)
-    ext = content_type.symbol || 'html' # symbol does not represent an extension
+    ext = content_type.symbol # symbol does not represent an extension
     path = [
       "#{public_path}/#{status}.#{I18n.locale}.#{ext}",
       "#{public_path}/#{status}.#{ext}"
@@ -20,7 +20,7 @@ class MimeTypedPublicExceptions < ActionDispatch::PublicExceptions
     if path
       render_format(status, content_type, File.read(path))
     else
-      [404, { 'X-Cascade' => 'pass' }, []]
+      render_html(status)
     end
   end
 end
