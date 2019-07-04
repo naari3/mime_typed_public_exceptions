@@ -17,11 +17,12 @@ Gem::Specification.new do |s|
     '{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md'
   ]
 
+  s.add_dependency 'mimemagic'
   s.add_dependency 'rails', '>= 5'
 
   s.add_development_dependency 'pry'
-  s.add_development_dependency 'rspec_junit_formatter'
   s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'rspec_junit_formatter'
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'sqlite3'
 end
